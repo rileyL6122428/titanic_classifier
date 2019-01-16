@@ -1,0 +1,2 @@
+- [ ] get stats on each attribute
+- [ ] look for stats correlations
