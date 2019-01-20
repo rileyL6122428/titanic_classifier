@@ -8,7 +8,7 @@ as_columns = {
 }
 
 def adapt_age(age):
-    return float(age) if age else age;
+    return float(age) if age else age
 
 for passenger in titanic_set_labelled:
     for col_name, value in passenger.items():

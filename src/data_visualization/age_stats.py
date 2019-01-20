@@ -16,18 +16,12 @@ having_age = passengers[passengers.Age != '']
 print('NUMBER OF PASSENGERS WITH AGE = ', len(having_age))
 print('PROPORTION PASSENGERS WITH AGE = ', round(len(having_age) / len(passengers), 3), '\n')
 
+
 print('youngest age = ', having_age.Age.min())
+print('oldest age = ', having_age.Age.max())
+print('mean age = ', having_age.Age.mean(), '\n')
 
-print('oldest age = ', having_age.Age.max(), '\n')
-
-# mean_age = sum(map(pick_age, having_age), 0) / having_age_count
-# print('mean age = ', mean_age)
-
-# median_age = (
-#     (
-#         pick_age(having_age_sorted[int(having_age_count /2)]) + 
-#         pick_age(having_age_sorted[int(having_age_count / 2 - 1)])
-#     ) / 2
-# )
-# print('median age = ', median_age)
+print('1st quartile = ', having_age.Age.quantile(.25))
+print('median age = ', having_age.Age.median())
+print('3rd quartile = ', having_age.Age.quantile(.75), '\n')
 
