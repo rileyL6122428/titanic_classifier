@@ -18,7 +18,8 @@ print('PROPORTION PASSENGERS WITH AGE = ', round(len(having_age) / len(passenger
 
 print('youngest age = ', having_age.Age.min())
 print('oldest age = ', having_age.Age.max())
-print('mean age = ', having_age.Age.mean(), '\n')
+print('mean age = ', having_age.Age.mean())
+print('std age = ', having_age.Age.std(), '\n')
 
 print('1st quartile = ', having_age.Age.quantile(.25))
 print('median age = ', having_age.Age.median())
@@ -29,7 +30,9 @@ print('SURVIVOR DISPERSION', '\n')
 survivors = having_age[having_age.Survived == '1']
 print('youngest age = ', survivors.Age.min())
 print('oldest age = ', survivors.Age.max())
-print('mean age = ', survivors.Age.mean(), '\n')
+
+print('mean age = ', survivors.Age.mean())
+print('std age = ', survivors.Age.std(), '\n')
 
 print('first quartile = ', survivors.Age.quantile(.25))
 print('median = ', survivors.Age.median())
@@ -39,8 +42,10 @@ print('CASUALTY DISPERSION', '\n')
 
 casualities = having_age[having_age.Survived == '0']
 print('youngest age = ', casualities.Age.min())
-print('oldest age = ', casualities.Age.max())
-print('mean age = ', casualities.Age.mean(), '\n')
+print('oldest age = ', casualities.Age.max(), '\n')
+
+print('mean age = ', casualities.Age.mean())
+print('std age = ', casualities.Age.std(), '\n')
 
 print('first quartile = ', casualities.Age.quantile(.25))
 print('median age = ', casualities.Age.median())
