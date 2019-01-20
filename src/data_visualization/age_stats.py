@@ -1,4 +1,3 @@
-from data_management.pickers import count_passengers, is_any, pick_age
 from data_management.load_training import titanic_set_labelled
 from data_management.training_dataframe import passengers
 

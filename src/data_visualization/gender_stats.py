@@ -1,10 +1,7 @@
-from data_management.pickers import count_passengers, is_male, is_female, survived, is_any
 from data_management.training_dataframe import passengers
 from functools import reduce
 
 print('STATS ON SEX', '\n')
-
-labelled_total = count_passengers(is_any)
 
 print('TOTAL LABELLED ENTRIES: ', len(passengers), '\n')
 
