@@ -1,5 +1,6 @@
 from data_management.load_training import titanic_set_labelled
 from data_management.training_dataframe import passengers
+from reusable_stats_builders.dispersion import print_dispersion_stats
 
 print('STATS ON AGE', '\n')
 
@@ -15,17 +16,7 @@ having_age = passengers[passengers.Age != '']
 print('NUMBER OF PASSENGERS WITH AGE = ', len(having_age))
 print('PROPORTION PASSENGERS WITH AGE = ', round(len(having_age) / len(passengers), 3), '\n')
 
-
-print('youngest age = ', having_age.Age.min())
-print('oldest age = ', having_age.Age.max(), '\n')
-
-print('mean age - std age = ', having_age.Age.mean() - having_age.Age.std())
-print('mean age = ', having_age.Age.mean())
-print('mean age + std age = ', having_age.Age.mean() + having_age.Age.std(), '\n')
-
-print('15 percent quantile = ', having_age.Age.quantile(.15))
-print('median age = ', having_age.Age.median())
-print('85 percent quartile = ', having_age.Age.quantile(.85), '\n')
+print_dispersion_stats(having_age, 'AGE POPULATED', 'Age', 'YRs')
 
 print('SURVIVOR DISPERSION', '\n')
 

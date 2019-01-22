@@ -1,28 +1,22 @@
 from collections import Counter
 
-def print_dispersion_stats(dataframe, stats_title, attribute):
-    print(stats_title, ' STATS', '\n')
+def print_dispersion_stats(dataframe, stats_title, attribute, units=''):
+    print(stats_title, 'DISPERSION STATS', '\n')
+
+    if units:
+        print('Stats below are in', units, '\n')
     
     series = dataframe[attribute]
 
-    counts = Counter(series)
-    print('counts = ', counts, '\n')
+    print('counts =', Counter(series), '\n')
 
-    min_val = series.min()
-    print('MIN = ', min_val)
-    max_val = series.max()
-    print('MAX = ', max_val, '\n')
+    print('MIN =', series.min())
+    print('MAX =', series.max(), '\n')
     
-    mean_minus_std = series.mean() - series.std()
-    print('MEAN - STD = ', mean_minus_std)
-    mean = series.mean()
-    print('MEAN = ', mean)
-    mean_plus_std = series.mean() + series.std()
-    print('MEAN + STD = ', mean_plus_std, '\n')
+    print('MEAN - STD =', series.mean() - series.std())
+    print('MEAN =', series.mean())
+    print('MEAN + STD =', series.mean() + series.std(), '\n')
 
-    fifteen_quantile = series.quantile(.15)
-    print('15% quantile = ', fifteen_quantile)
-    median = series.median()
-    print('50% quantile = ', median)
-    eighty_five_quantile = series.quantile(.85)
-    print('85% quantile = ', eighty_five_quantile, '\n')
+    print('15% quantile =', series.quantile(.15))
+    print('50% quantile =', series.median())
+    print('85% quantile =', series.quantile(.85), '\n')
