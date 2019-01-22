@@ -3,8 +3,8 @@
     - [x] age
     - [x] gender
     - [x] title
-    - [ ] sibsp number
-    - [ ] parents children
+    - [x] sibsp number
+    - [x] parents children
     - [ ] cabin number
     - [ ] embarked
     - [ ] fare
