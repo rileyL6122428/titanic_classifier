@@ -20,6 +20,9 @@ def parse_title(name):
 def parse_sibsp(count):
     return int(count)
 
+def parse_parch(count):
+    return int(count)
+
 for passenger in titanic_set_labelled:
     for col_name, value in passenger.items():
         if col_name == 'Age':
@@ -29,6 +32,8 @@ for passenger in titanic_set_labelled:
             as_columns.get('Title').append(parse_title(value))
         elif col_name == 'SibSp':
             as_columns.get('SibSp').append(parse_sibsp(value))
+        elif col_name == 'Parch':
+            as_columns.get('Parch').append(parse_parch(value))
         else:
             as_columns.get(col_name).append(value)
 
