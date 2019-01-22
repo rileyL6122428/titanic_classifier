@@ -8,8 +8,6 @@ def print_dispersion_stats(dataframe, stats_title, attribute, units=''):
     
     series = dataframe[attribute]
 
-    print('counts =', Counter(series), '\n')
-
     print('MIN =', series.min())
     print('MAX =', series.max(), '\n')
     
@@ -20,3 +18,5 @@ def print_dispersion_stats(dataframe, stats_title, attribute, units=''):
     print('15% quantile =', series.quantile(.15))
     print('50% quantile =', series.median())
     print('85% quantile =', series.quantile(.85), '\n')
+
+    print('counts =', Counter(series), '\n')
