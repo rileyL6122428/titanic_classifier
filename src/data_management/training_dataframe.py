@@ -34,6 +34,8 @@ for passenger in titanic_set_labelled:
             as_columns.get('SibSp').append(parse_sibsp(value))
         elif col_name == 'Parch':
             as_columns.get('Parch').append(parse_parch(value))
+        elif col_name == 'Cabin':
+            as_columns.get('Cabin').append(value)
         else:
             as_columns.get(col_name).append(value)
 
