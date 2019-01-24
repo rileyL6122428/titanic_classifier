@@ -23,6 +23,9 @@ def parse_sibsp(count):
 def parse_parch(count):
     return int(count)
 
+def parse_fare(fare):
+    return float(fare) if fare else None
+
 for passenger in titanic_set_labelled:
     for col_name, value in passenger.items():
         if col_name == 'Age':
@@ -36,14 +39,9 @@ for passenger in titanic_set_labelled:
             as_columns.get('Parch').append(parse_parch(value))
         elif col_name == 'Cabin':
             as_columns.get('Cabin').append(value)
+        elif col_name == 'Fare':
+            as_columns.get('Fare').append(parse_fare(value))
         else:
             as_columns.get(col_name).append(value)
 
 passengers = DataFrame(data=as_columns)
-
-# ages = passengers.Age
-
-# not_having_age = passengers[passengers.Age == '']
-# having_age = passengers[passengers.Age != '']
-# print(len(having_age))
-# print(len(not_having_age))
