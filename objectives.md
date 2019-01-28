@@ -1,12 +1,11 @@
 - [ ] get stats on each attribute
-    - [x] class
+    - [x] class (refactor?)
     - [x] age
-    - [x] gender
-    - [x] title
+    - [x] gender (refactor?)
+    - [x] title (refactor?)
     - [x] sibsp number
     - [x] parents children
-    - [ ] cabin number
-    - [ ] embarked
-    - [ ] fare
-    - [ ] cabin
-- [ ] look for stats correlations
+    - [x] embarked
+    - [x] cabin
+    - [x] fare
+    - [ ] derived attrs?
