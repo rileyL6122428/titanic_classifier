@@ -8,4 +8,12 @@
     - [x] embarked
     - [x] cabin
     - [x] fare
-    - [ ] derived attrs?
+
+    *DERIVED ATTRS*
+
+    - [x] fare / (sibsp + parch) **NOT FRUITFUL**
+    
+
+- [x] decide on attrs
+    try with class and gender, then try with fare and gender, then with all 3
+
