@@ -1,0 +1,2 @@
+from data_management.training_dataframe import passengers
+from sklearn.linear_model import LogisticRegression
