@@ -16,4 +16,7 @@
 
 - [x] decide on attrs
     try with class and gender, then try with fare and gender, then with all 3
-
+    
+- [ ] build pipeline
+- [ ] build logistic classifier (linear regression)
+- [ ] build decision tree classifier
