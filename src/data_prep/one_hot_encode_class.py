@@ -5,11 +5,11 @@ from sklearn.preprocessing import OneHotEncoder
 class PassengerClassEncoder:
 
     def __init__(self, sparse=False):
-        self.encoder = OneHotEncoder(sparse=False)
+        self.encoder_ = OneHotEncoder(sparse=False)
     
     def transform(self, passengers, survived=None):
-        wrapped_pclasses = list(map(lambda pclass: [pclass], passengers.Pclass))
-        encoded_pclasses = self.encoder.fit_transform(wrapped_pclasses)
+        wrapped_pclasses = self._wrap_class(passengers)
+        encoded_pclasses = self.encoder_.fit_transform(wrapped_pclasses)
         encoded_pclasses_df = pandas.DataFrame(
             encoded_pclasses,
             columns=[
@@ -20,6 +20,16 @@ class PassengerClassEncoder:
         )
         passengers = pandas.concat([passengers, encoded_pclasses_df], axis=1)
         return passengers.drop(columns=['Pclass'])
+    
+    def fit_transform(self, passengers, survived):
+        self.fit(passengers, survived)
+        return self.transform(passengers, survived)
+    
+    def fit(self, passengers, survived):
+        pass
+
+    def _wrap_class(self, passengers):
+        return list(map(lambda pclass: [pclass], passengers.Pclass))
 
 
  
