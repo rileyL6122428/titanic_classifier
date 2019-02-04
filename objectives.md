@@ -18,5 +18,22 @@
     try with class and gender, then try with fare and gender, then with all 3
     
 - [ ] build pipeline
-- [ ] build logistic classifier (linear regression)
+    1. one hot encode class
+    2. one hot encode gender
+- [ ] build logistic classifier
+- [ ] build linear with logistic
 - [ ] build decision tree classifier
+
+```Python
+# return passengers.drop(columns=[
+#     'PassengerId',
+#     'Name',
+#     'Age',
+#     'SibSp',
+#     'Parch',
+#     'Ticket',
+#     'Cabin',
+#     'Embarked',
+#     'Title'
+# ])
+```
