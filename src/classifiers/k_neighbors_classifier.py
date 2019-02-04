@@ -25,11 +25,11 @@ grid_search_neighbors.fit(transformed_passengers, survived)
 
 print('best params =', grid_search_neighbors.best_params_)
 
-classifier = grid_search_neighbors.best_estimator_
+k_neighbors_classifier = grid_search_neighbors.best_estimator_
 
-predictions = classifier.predict(transformed_passengers)
+# predictions = classifier.predict(transformed_passengers)
 
-print('precision =', precision_score(survived, predictions))
-# ~0.93
-print('recall =', recall_score(survived, predictions))
-# ~0.81
+# print('precision =', precision_score(survived, predictions))
+# # ~0.93
+# print('recall =', recall_score(survived, predictions))
+# # ~0.81
