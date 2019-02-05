@@ -5,6 +5,10 @@ from data_prep.normalize_fare import NormalizeFare
 from data_prep.one_hot_encode_class import PassengerClassEncoder
 
 passenger_transformer = Pipeline(steps=[
+
+    ('encode_gender', OneHotEncodeGender(sparse=False)),
+    ('encode_class', PassengerClassEncoder(sparse=False)),
+    ('normalize_fare', NormalizeFare()),
     ('drop_attrs', DropAttrsTransformer(attrs=[
         'PassengerId',
         'Name',
@@ -16,8 +20,4 @@ passenger_transformer = Pipeline(steps=[
         'Embarked',
         'Title'
     ])),
-
-    ('encode_gender', OneHotEncodeGender(sparse=False)),
-    ('encode_class', PassengerClassEncoder(sparse=False)),
-    ('normalize_fare', NormalizeFare()),
 ])

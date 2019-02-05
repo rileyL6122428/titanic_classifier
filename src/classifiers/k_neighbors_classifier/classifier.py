@@ -1,11 +1,8 @@
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import precision_score, recall_score
 from sklearn.model_selection import GridSearchCV
-from data_management.X_Y import X as passengers, Y as survived
-from data_prep.pipelines import passenger_transformer
-
-
-transformed_passengers = passenger_transformer.transform(passengers)
+from data_management.X_Y import Y as survived
+from data_management.transformed_train_passengers import transformed_passengers as training_passengers
 
 grid_search_neighbors = GridSearchCV(
     cv = 5,
@@ -21,15 +18,9 @@ grid_search_neighbors = GridSearchCV(
     verbose=10
 )
 
-grid_search_neighbors.fit(transformed_passengers, survived)
+grid_search_neighbors.fit(training_passengers, survived)
 
-print('best params =', grid_search_neighbors.best_params_)
+# print('best params =', grid_search_neighbors.best_params_)
+# best params = {'n_neighbors': 5, 'p': 1, 'weights': 'distance'}
 
 k_neighbors_classifier = grid_search_neighbors.best_estimator_
-
-# predictions = classifier.predict(transformed_passengers)
-
-# print('precision =', precision_score(survived, predictions))
-# # ~0.93
-# print('recall =', recall_score(survived, predictions))
-# # ~0.81
